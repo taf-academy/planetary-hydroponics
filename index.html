@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Planetary Hydroponics Simulator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="js/main.js"></script>
+        <div id="inputPanel">
+            <form class="pure-form pure-form-aligned" id="simInput">
+                <fieldset>
+                    Planet
+                    <label for="mars" class="pure-radio">
+                        <input id="mars" type="radio" name="planetsRadios" value="mars" checked> Mars
+                    </label>
+                    <label for="titan" class="pure-radio">
+                        <input id="titan" type="radio" name="planetsRadios" value="titan"> Titan
+                    </label>
+                    <label for="oxygen">How much Oxygen?</label> <input type="text" name="oxygen" value="1"><span class="error"></span>
+                    <label for="water">How much Water?</label> <input type="text" name="water" value="1"><span class="error"></span>
+                    <label for="light">How much Light?</label> <input type="text" name="light" value="1"><span class="error"></span>
+                    <label for="nutrients">How much Nutrients?</label> <input type="text" name="nutrients" value="1"><span class="error"></span>
+                    
+                    <input type="button" value="Simulate" onClick="SIM.collectInput()">
+                </fieldset>
+
+            </form>
+        </div>
+        <div id="messagePanel"></div>
+        <div id="plantDisplay"></div>
+    </body>
+</html>
