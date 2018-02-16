@@ -59,12 +59,16 @@ var SIM = (function () {
 
         if (noErrors(params)) {
             console.log("Running simulation...");
-            runSimulation(params.oxygen.value, params.light.value, params.water.value, params.nutrients.value, params.planet.value);
+            var currentPlantState = runSimulation(params.oxygen.value, params.light.value, params.water.value, params.nutrients.value, params.planet.value);
+            showImage(plantImages[currentPlantState]);
             console.log("Simulation complete.");
         }
         else {
             addMessage("Could not run simulation due to one or more errors.");
         }
+
+        
+        showMessages();
 
     };
 
@@ -203,8 +207,7 @@ var SIM = (function () {
             default:
         }
 
-        showImage(plantImages[currentPlantState]);
-        showMessages();
+        return currentPlantState;
     }
 
     /**
